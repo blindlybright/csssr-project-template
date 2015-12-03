@@ -39,7 +39,7 @@ gulp.task('watch', () => {
 		reload
 	));
 
-	watch('app/scripts/**/*.js', () => gulp.start(
+	watch('app/{scripts,blocks}/**/*.js', () => gulp.start(
 		'scripts',
 		'lint',
 		reload
