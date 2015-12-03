@@ -26,7 +26,12 @@ gulp.task('watch', () => {
 	watch('app/{blocks,pages}/**/*.json')
 		.on('change', (file) => {
 			global.changedJSON = file;
-			return runSequence('templates:clear', 'templates', reload);
+
+			return runSequence(
+				'templates:clear',
+				'templates',
+				reload
+			);
 		});
 
 	watch('app/resources/**/*', () => runSequence(

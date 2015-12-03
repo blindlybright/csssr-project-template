@@ -60,6 +60,7 @@ module.exports = {
 
 				delete(global.changedJSON);
 			}
+
 			cb();
 		}
 	},
