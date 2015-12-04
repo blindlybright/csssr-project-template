@@ -3,7 +3,7 @@ import gutil  from 'gulp-util';
 import gulpif from 'gulp-if';
 import zip    from 'gulp-zip';
 import paths  from '../paths';
-import pkg    from '../../package.json';
+import {name} from '../../package.json';
 
 let correctNumber = (number) => number < 10 ? '0' + number : number;
 
@@ -19,29 +19,29 @@ let getDateTime = () => {
 };
 
 gulp.task('zip:dist', () => {
-	let zipDistName = pkg.name + '-dist-' + getDateTime() + '.zip';
+	let zipDistName = name + '-dist-' + getDateTime() + '.zip';
 
 	return gulp.src([
-			'dist/**/*',
+			paths.dist + '/**/*',
 			'!**/*.zip'
 		])
 		.pipe(zip(zipDistName))
-		.pipe(gulp.dest(paths.dist))
+		.pipe(gulp.dest(paths.zip))
 });
 
 gulp.task('zip:app', () => {
-	let zipAppName = pkg.name + '-app-' + getDateTime() + '.zip';
+	let zipAppName = name + '-app-' + getDateTime() + '.zip';
 
 	return gulp.src([
 		'**/*',
 		'./.*',
 		'!**/*.{zip,sublime-*}',
 		'!{node_modules,node_modules/**/*}',
-		'!{dist,dist/**/*}',
+		'!{' + paths.dist + ',' + paths.dist + '/**/*}',
 		'!{.git,.git/**/*}'
 	])
 		.pipe(zip(zipAppName))
-		.pipe(gulp.dest(paths.dist))
+		.pipe(gulp.dest(paths.zip))
 });
 
 gulp.task('zip', ['zip:app', 'zip:dist']);

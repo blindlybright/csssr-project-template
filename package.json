@@ -15,7 +15,8 @@
     "start": "gulp --debug",
     "build": "gulp build",
     "lint": "gulp lint",
-    "deploy": "gulp del && gulp build --robots && gulp deploy"
+    "deploy": "gulp del && gulp build --robots && gulp deploy",
+    "zip": "gulp del && gulp build --robots && gulp zip"
   },
   "repository": {
     "type": "git",

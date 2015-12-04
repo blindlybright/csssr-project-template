@@ -5,5 +5,6 @@ export default {
 	assets: 'dist/assets/',
 	images: 'dist/assets/images',
 	scripts: 'dist/assets/scripts',
-	styles: 'dist/assets/styles'
+	styles: 'dist/assets/styles',
+	zip: './'
 };
