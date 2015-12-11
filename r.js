@@ -9,7 +9,7 @@ const pagesPath = path.resolve(paths.app, 'pages');
 const directory = fs.readdirSync(pagesPath);
 const pagePassed = process.argv[3];
 
-// list here pages to hide by this script
+// list here pages to hide temporarily by this script
 var pages = [
 	'root',
 	'root-auth',
