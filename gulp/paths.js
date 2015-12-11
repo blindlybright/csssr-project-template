@@ -1,4 +1,5 @@
 export default {
+	app: 'app',
 	appImages: 'app/images',
 	appStylesHelpers: 'app/styles/helpers',
 	dist: 'dist',
